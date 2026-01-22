@@ -18,9 +18,9 @@
 
         :root {
             --bg-dark: #050505; 
-            --spot-glow: rgba(255, 20, 147, 0.25); 
+            --spot-glow: rgba(217, 101, 114, 0.25); /* Новый цвет в RGB для свечения */
             --glass-dark: rgba(20, 20, 20, 0.6); 
-            --accent-pink: #ff3399; /* Яркий неоновый розовый */
+            --accent-pink: #d96572; /* Твой новый цвет */
             --text-main: #ffffff;
             --text-muted: #cccccc;
             --radius: 50px; 
@@ -108,7 +108,7 @@
             border: 1px solid var(--border-glass);
         }
 
-        /* ЛОГОТИП С РОЗОВЫМ СВЕЧЕНИЕМ */
+        /* ЛОГОТИП С СВЕЧЕНИЕМ */
         .logo img { 
             height: 35px; 
             display: block; 
@@ -205,7 +205,7 @@
 
         h2 {
             font-size: 40px;
-            color: var(--accent-pink); /* ЗАГОЛОВКИ ТЕПЕРЬ РОЗОВЫЕ */
+            color: var(--accent-pink);
             margin-bottom: 25px;
             font-weight: 800;
             padding-left: 20px;
@@ -227,33 +227,13 @@
             font-weight: 300;
         }
         
-        .btn-video {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 15px 40px;
-            background: transparent;
-            border: 1px solid var(--accent-pink);
-            color: var(--text-main);
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Montserrat';
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-        .btn-video:hover { background: var(--accent-pink); box-shadow: 0 0 20px var(--accent-pink); }
-
-        .video-trigger {
+        .static-image {
             position: relative;
-            cursor: pointer;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(255, 51, 153, 0.3);
-            transition: transform 0.3s;
+            box-shadow: 0 20px 60px rgba(217, 101, 114, 0.2); /* Тень нового цвета */
         }
-        .video-trigger:hover { transform: scale(1.02); }
-        .video-trigger img { width: 100%; display: block; height: auto; border-radius: var(--radius); }
+        .static-image img { width: 100%; display: block; height: auto; border-radius: var(--radius); }
 
         /* --- УСЛУГИ --- */
         .services-desc { margin-bottom: 40px; padding-left: 20px; color: var(--text-muted); }
@@ -277,7 +257,6 @@
         }
         .service-card:hover { border-color: var(--accent-pink); transform: translateY(-5px); }
         
-        /* Задержка анимации для карточек */
         .service-card:nth-child(2) { transition-delay: 0.1s; }
         .service-card:nth-child(3) { transition-delay: 0.2s; }
 
@@ -289,7 +268,9 @@
         .card-btn {
             display: block; text-align: center; padding: 15px; border-radius: 50px;
             border: 1px solid var(--accent-pink); color: #fff; text-decoration: none;
-            font-weight: 600; text-transform: uppercase; font-size: 12px; transition: 0.3s;
+            font-weight: 600; text-transform: uppercase; font-size: 11px; /* Чуть уменьшил шрифт чтобы влезло */
+            letter-spacing: 0.5px;
+            transition: 0.3s;
         }
         .card-btn:hover { background: var(--accent-pink); box-shadow: 0 0 15px var(--accent-pink); }
 
@@ -338,7 +319,7 @@
         footer .logo { margin-bottom: 20px; }
         footer p { color: #555; font-size: 14px; text-align: center; }
 
-        /* --- ПОПАПЫ --- */
+        /* --- ПОПАП ГАЛЕРЕИ (Видео модалку удалил) --- */
         .modal {
             display: none;
             position: fixed;
@@ -350,7 +331,6 @@
             align-items: center;
             justify-content: center;
         }
-        .modal-video-box { width: 80%; max-width: 1000px; aspect-ratio: 16/9; position: relative; }
         
         .close-btn {
             position: absolute;
@@ -435,12 +415,11 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>Привет! Меня зовут <span style="color:white; font-weight:600;">Ксения</span>. Я создала пространство, где натуральность становится искусством.</p>
-                        <p>Я топ-мастер по <span style="border-bottom:1px solid #ff3399;">пудровому напылению</span> и архитектуре взгляда в Омске. С 2018 года я помогаю девушкам выглядеть дорого и ухоженно 24/7, забыв про косметичку.</p>
+                        <p>Я топ-мастер по <span style="border-bottom:1px solid #d96572;">пудровому напылению</span> и архитектуре взгляда в Омске. С 2018 года я помогаю девушкам выглядеть дорого и ухоженно 24/7, забыв про косметичку.</p>
                         <p>Только премиум материалы, полная стерильность и индивидуальный подход. Более 2000 довольных клиентов уже выбрали качество.</p>
-                        <button class="btn-video" onclick="openVideo()">Смотреть видео</button>
-                    </div>
-                    <div class="video-trigger" onclick="openVideo()">
-                        <img src="images/video-cover.jpg" alt="Видео о студии">
+                        </div>
+                    <div class="static-image">
+                        <img src="images/video-cover.jpg" alt="Фото студии">
                     </div>
                 </div>
             </div>
@@ -451,18 +430,7 @@
             <p class="services-desc reveal">Идеальный взгляд без ежедневных усилий.</p>
             
             <div class="services-grid">
-                <div class="service-card reveal">
-                    <div>
-                        <div class="service-title">Перманент</div>
-                        <ul class="service-list">
-                            <li><span>Пудровые брови</span> <span class="price">5 000 ₽</span></li>
-                            <li><span>Акварельные губы</span> <span class="price">5 000 ₽</span></li>
-                            <li><span>Межресничка</span> <span class="price">3 500 ₽</span></li>
-                            <li><span>Коррекция</span> <span class="price">2 500 ₽</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Записаться</a>
-                </div>
+                
                 <div class="service-card reveal">
                     <div>
                         <div class="service-title">Брови</div>
@@ -473,8 +441,9 @@
                             <li><span>Мужская коррекция</span> <span class="price">800 ₽</span></li>
                         </ul>
                     </div>
-                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Записаться</a>
+                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Все услуги и цены</a>
                 </div>
+
                 <div class="service-card reveal">
                     <div>
                         <div class="service-title">Ресницы</div>
@@ -485,8 +454,22 @@
                             <li><span>Снятие нарощенных</span> <span class="price">400 ₽</span></li>
                         </ul>
                     </div>
-                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Записаться</a>
+                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Все услуги и цены</a>
                 </div>
+
+                <div class="service-card reveal">
+                    <div>
+                        <div class="service-title">Перманент</div>
+                        <ul class="service-list">
+                            <li><span>Пудровые брови</span> <span class="price">5 000 ₽</span></li>
+                            <li><span>Акварельные губы</span> <span class="price">5 000 ₽</span></li>
+                            <li><span>Межресничка</span> <span class="price">3 500 ₽</span></li>
+                            <li><span>Коррекция</span> <span class="price">2 500 ₽</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://dikidi.net/#widget=202565" class="card-btn">Все услуги и цены</a>
+                </div>
+
             </div>
         </section>
 
@@ -533,13 +516,6 @@
         <p>© 2018–2026 MELBA SPACE.</p>
     </footer>
 
-    <div id="videoModal" class="modal">
-        <span class="close-btn" onclick="closeVideo()">&times;</span>
-        <div class="modal-video-box">
-             <iframe src="https://kinescope.io/sq2HG6a5QRULTZZAJxzEGp" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" frameborder="0" allowfullscreen style="width:100%; height:100%;"></iframe>
-        </div>
-    </div>
-
     <div id="galleryModal" class="modal">
         <span class="close-btn" onclick="closeGallery()">&times;</span>
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
@@ -561,16 +537,11 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        // Запустить один раз при загрузке
         reveal();
 
         // --- Мобильное Меню ---
         function openMobileMenu() { document.getElementById('mobileMenu').classList.add('active'); }
         function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('active'); }
-
-        // --- Видео ---
-        function openVideo() { document.getElementById('videoModal').style.display = "flex"; }
-        function closeVideo() { document.getElementById('videoModal').style.display = "none"; }
 
         // --- Галерея ---
         const images = [
@@ -596,7 +567,6 @@
 
         window.onclick = function(event) {
             if (event.target == modal) { closeGallery(); }
-            if (event.target == document.getElementById('videoModal')) { closeVideo(); }
             if (event.target == document.getElementById('mobileMenu')) { closeMobileMenu(); }
         }
     </script>
