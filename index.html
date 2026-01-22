@@ -58,7 +58,7 @@
         /* --- АНИМАЦИЯ ПОЯВЛЕНИЯ (Scroll Reveal) --- */
         .reveal {
             opacity: 0;
-            transform: translateY(50px); /* Блоки выезжают снизу */
+            transform: translateY(50px);
             transition: all 0.8s ease-out;
         }
         .reveal.active {
@@ -139,10 +139,13 @@
             margin-left: 20px;
         }
         .social-icons-desktop a img {
-            width: 24px; height: 24px; display: block; transition: all 0.3s ease;
+            width: 24px; height: 24px; display: block; 
+            transition: all 0.3s ease;
+            border-radius: 50%; /* ИСПРАВЛЕНИЕ: Делаем иконки строго круглыми */
         }
         .social-icons-desktop a:hover img {
-            transform: scale(1.2); filter: drop-shadow(0 0 5px var(--accent-pink));
+            transform: scale(1.2); 
+            filter: drop-shadow(0 0 5px var(--accent-pink));
         }
 
         .nav-cta {
@@ -196,7 +199,10 @@
         .mobile-links a:hover { color: var(--accent-pink); }
 
         .mobile-socials { display: flex; gap: 20px; margin-bottom: 40px; }
-        .mobile-socials img { width: 32px; height: 32px; }
+        .mobile-socials img { 
+            width: 32px; height: 32px; 
+            border-radius: 50%; /* ИСПРАВЛЕНИЕ: Делаем иконки строго круглыми */
+        }
 
         .mobile-close { position: absolute; top: 30px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; }
 
@@ -304,8 +310,15 @@
         .contact-icon { color: var(--accent-pink); margin-right: 15px; font-size: 20px; }
         
         .contact-links { display: flex; gap: 15px; margin-top: 10px; }
-        .contact-links a img { width: 24px; height: 24px; transition: 0.3s; }
-        .contact-links a:hover img { transform: scale(1.2); filter: drop-shadow(0 0 5px var(--accent-pink)); }
+        .contact-links a img { 
+            width: 24px; height: 24px; 
+            transition: 0.3s;
+            border-radius: 50%; /* ИСПРАВЛЕНИЕ: Делаем иконки строго круглыми */
+        }
+        .contact-links a:hover img { 
+            transform: scale(1.2); 
+            filter: drop-shadow(0 0 5px var(--accent-pink)); 
+        }
 
         /* --- ПОДВАЛ --- */
         footer {
