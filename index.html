@@ -18,9 +18,10 @@
 
         :root {
             --bg-dark: #050505; 
-            --spot-glow: rgba(217, 101, 114, 0.25); /* Новый цвет в RGB для свечения */
+            /* Увеличили непрозрачность свечения (было 0.25, стало 0.45) для яркости */
+            --spot-glow: rgba(217, 101, 114, 0.45); 
             --glass-dark: rgba(20, 20, 20, 0.6); 
-            --accent-pink: #d96572; /* Твой новый цвет */
+            --accent-pink: #d96572;
             --text-main: #ffffff;
             --text-muted: #cccccc;
             --radius: 50px; 
@@ -37,9 +38,10 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-main);
             background-color: var(--bg-dark);
+            /* Увеличили радиус пятен с 50% до 80% чтобы они заполнили фон */
             background-image: 
-                radial-gradient(circle at 10% 20%, var(--spot-glow) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, var(--spot-glow) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, var(--spot-glow) 0%, transparent 80%),
+                radial-gradient(circle at 90% 80%, var(--spot-glow) 0%, transparent 80%);
             background-attachment: fixed;
             min-height: 100vh;
             overflow-x: hidden;
@@ -231,7 +233,7 @@
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(217, 101, 114, 0.2); /* Тень нового цвета */
+            box-shadow: 0 20px 60px rgba(217, 101, 114, 0.2); 
         }
         .static-image img { width: 100%; display: block; height: auto; border-radius: var(--radius); }
 
@@ -268,7 +270,7 @@
         .card-btn {
             display: block; text-align: center; padding: 15px; border-radius: 50px;
             border: 1px solid var(--accent-pink); color: #fff; text-decoration: none;
-            font-weight: 600; text-transform: uppercase; font-size: 11px; /* Чуть уменьшил шрифт чтобы влезло */
+            font-weight: 600; text-transform: uppercase; font-size: 11px;
             letter-spacing: 0.5px;
             transition: 0.3s;
         }
@@ -319,7 +321,7 @@
         footer .logo { margin-bottom: 20px; }
         footer p { color: #555; font-size: 14px; text-align: center; }
 
-        /* --- ПОПАП ГАЛЕРЕИ (Видео модалку удалил) --- */
+        /* --- ПОПАП ГАЛЕРЕИ --- */
         .modal {
             display: none;
             position: fixed;
@@ -417,7 +419,7 @@
                         <p>Привет! Меня зовут <span style="color:white; font-weight:600;">Ксения</span>. Я создала пространство, где натуральность становится искусством.</p>
                         <p>Я топ-мастер по <span style="border-bottom:1px solid #d96572;">пудровому напылению</span> и архитектуре взгляда в Омске. С 2018 года я помогаю девушкам выглядеть дорого и ухоженно 24/7, забыв про косметичку.</p>
                         <p>Только премиум материалы, полная стерильность и индивидуальный подход. Более 2000 довольных клиентов уже выбрали качество.</p>
-                        </div>
+                    </div>
                     <div class="static-image">
                         <img src="images/video-cover.jpg" alt="Фото студии">
                     </div>
@@ -496,7 +498,7 @@
                     <iframe src="https://yandex.ru/map-widget/v1/?ll=73.381395%2C54.973415&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjEzNDc2NBJC0KDQvtGB0YHQuNGPLCDQntC80YHQuiwg0L_RgNC-0YHQv9C10LrRgiDQmtCw0YDQu9CwINCc0LDRgNC60YHQsCwgMzkiCg1eO1NCFf-aVEI%2C&z=16.71" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe>
                 </div>
                 <div class="contact-info">
-                    <h3 style="font-size: 24px; margin-bottom: 20px;">Ждем вас в гости</h3>
+                    <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--accent-pink);">Ждем вас в гости</h3>
                     <div class="contact-row"><span class="contact-icon">📅</span> Ежедневно 12:00 – 22:00</div>
                     <div class="contact-row"><span class="contact-icon">📍</span> г. Омск, ул. Карла Маркса 39,<br>1 этаж, офис 102</div>
                     <div class="contact-row"><span class="contact-icon">📞</span> +7 913 977 71 77</div>
