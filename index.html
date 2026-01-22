@@ -18,10 +18,10 @@
 
         :root {
             --bg-dark: #050505; 
-            /* Обновили свечение под новый оранжевый цвет (RGB: 236, 98, 42) */
-            --spot-glow: rgba(236, 98, 42, 0.25); 
+            /* Яркие пятна (RGB: 255, 74, 0) с непрозрачностью 0.4 */
+            --spot-glow: rgba(255, 74, 0, 0.4); 
             --glass-dark: rgba(20, 20, 20, 0.6); 
-            --accent-pink: #ec622a; /* Твой новый цвет */
+            --accent-pink: #ff4a00; /* Новый ядерный оранжевый */
             --text-main: #ffffff;
             --text-muted: #cccccc;
             --radius: 50px; 
@@ -58,7 +58,7 @@
         /* --- АНИМАЦИЯ ПОЯВЛЕНИЯ (Scroll Reveal) --- */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(50px); /* Блоки выезжают снизу */
             transition: all 0.8s ease-out;
         }
         .reveal.active {
@@ -232,7 +232,7 @@
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(236, 98, 42, 0.2); 
+            box-shadow: 0 20px 60px rgba(255, 74, 0, 0.2); 
         }
         .static-image img { width: 100%; display: block; height: auto; border-radius: var(--radius); }
 
@@ -416,7 +416,7 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>Привет! Меня зовут <span style="color:white; font-weight:600;">Ксения</span>. Я создала пространство, где натуральность становится искусством.</p>
-                        <p>Я топ-мастер по <span style="border-bottom:1px solid #ec622a;">пудровому напылению</span> и архитектуре взгляда в Омске. С 2018 года я помогаю девушкам выглядеть дорого и ухоженно 24/7, забыв про косметичку.</p>
+                        <p>Я топ-мастер по <span style="border-bottom:1px solid #ff4a00;">пудровому напылению</span> и архитектуре взгляда в Омске. С 2018 года я помогаю девушкам выглядеть дорого и ухоженно 24/7, забыв про косметичку.</p>
                         <p>Только премиум материалы, полная стерильность и индивидуальный подход. Более 2000 довольных клиентов уже выбрали качество.</p>
                     </div>
                     <div class="static-image">
